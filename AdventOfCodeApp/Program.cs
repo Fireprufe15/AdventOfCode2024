@@ -43,6 +43,7 @@ while (true)
     catch (Exception ex)
     {
         Console.WriteLine("We have had an issue! All Elves to issue solving stations! Please retry...");
+        Console.WriteLine("The magnificent jolly elf supercomputer has identified the following as the issue:");
         Console.WriteLine(ex.Message);
     }
 
