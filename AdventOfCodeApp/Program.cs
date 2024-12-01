@@ -19,23 +19,31 @@ while (true)
     var input = Console.ReadLine();
     Console.WriteLine("Please insert the path of the text file containing your input for this tool");
     var path = Console.ReadLine();
-    var text = File.ReadAllText(path);
-
-    switch (input)
+    try
     {
-        case "1":
-            var distanceSolver = new ListDistanceSolver();
-            var distanceResult = distanceSolver.Solve(text);
-            Console.WriteLine($"The distance score of the lists is: {distanceResult}");
-            break;
-        case "2":
-            var similaritySolver = new ListSimilaritySolver();
-            var similarityResult = similaritySolver.Solve(text);
-            Console.WriteLine($"The similarity score of the lists is: {similarityResult}");
-            break;
-        default:
-            Console.WriteLine("Invalid input");
-            break;
+        var text = File.ReadAllText(path);
+
+        switch (input)
+        {
+            case "1":
+                var distanceSolver = new ListDistanceSolver();
+                var distanceResult = distanceSolver.Solve(text);
+                Console.WriteLine($"The distance score of the lists is: {distanceResult}");
+                break;
+            case "2":
+                var similaritySolver = new ListSimilaritySolver();
+                var similarityResult = similaritySolver.Solve(text);
+                Console.WriteLine($"The similarity score of the lists is: {similarityResult}");
+                break;
+            default:
+                Console.WriteLine("Invalid input");
+                break;
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("We have had an issue! All Elves to issue solving stations! Please retry...");
+        Console.WriteLine(ex.Message);
     }
 
     Console.WriteLine("Press any key to return to the main menu...");
