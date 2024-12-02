@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using AdventOfCodeApp.Day1;
+using AdventOfCodeApp.Day2;
 
 Console.WriteLine("THIS IS CRITICAL, WE NEED TO FIND THE CHIEF HISTORIAN");
 Console.WriteLine("Without him, Christmas will be ruined!");
@@ -15,6 +16,9 @@ while (true)
     Console.WriteLine("1. Historian's Office Search List Distance");
     Console.WriteLine("2. Historian's Office Search List Similarity");
     Console.WriteLine();
+    Console.WriteLine("DAY 2 TOOLS:");
+    Console.WriteLine("3. Red-Nose Reactor Report Safety Analyser");
+    Console.WriteLine("4. Red-Nose Reactor Report Safety Analyser with Problem Dampener");
 
     var input = Console.ReadLine();
     Console.WriteLine("Please insert the path of the text file containing your input for this tool");
@@ -26,14 +30,20 @@ while (true)
         switch (input)
         {
             case "1":
-                var distanceSolver = new ListDistanceSolver();
-                var distanceResult = distanceSolver.Solve(text);
+                var distanceResult = ListDistanceSolver.Solve(text);
                 Console.WriteLine($"The distance score of the lists is: {distanceResult}");
                 break;
             case "2":
-                var similaritySolver = new ListSimilaritySolver();
-                var similarityResult = similaritySolver.Solve(text);
+                var similarityResult = ListSimilaritySolver.Solve(text);
                 Console.WriteLine($"The similarity score of the lists is: {similarityResult}");
+                break;
+            case "3": 
+                var safetyResult = ReportSafetySolver.Solve(text);
+                Console.WriteLine($"The number of safe reports is: {safetyResult}");
+                break;
+            case "4":
+                var safetyResultWithDampener = ReportSafetySolver.Solve(text, true);
+                Console.WriteLine($"The number of safe reports when using the problem dampener is: {safetyResultWithDampener}");
                 break;
             default:
                 Console.WriteLine("Invalid input");

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace AdventOfCodeApp.Day1
 {
-    public class ListSimilaritySolver
+    public static class ListSimilaritySolver
     {
-        public int Solve(string input)
+        public static int Solve(string input)
         {
-            var lists = Parser.ParseLists(input);
+            var lists = HistorianListParser.ParseLists(input);
 
             var totalSimilarity = 0;
             foreach (var item in lists[0])

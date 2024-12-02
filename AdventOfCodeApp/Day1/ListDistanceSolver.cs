@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace AdventOfCodeApp.Day1
 {
-    public class ListDistanceSolver
+    public static class ListDistanceSolver
     {
-        public int Solve(string input)
+        public static int Solve(string input)
         {
-            var lists = Parser.ParseLists(input);
+            var lists = HistorianListParser.ParseLists(input);
             foreach (var list in lists)
             {
                 list.Sort();

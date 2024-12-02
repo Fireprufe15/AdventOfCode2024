@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCodeApp.Day1
 {
-    public class Parser
+    public static class HistorianListParser
     {
         public static List<List<int>> ParseLists(string input)
         {
