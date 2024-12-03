@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using AdventOfCodeApp.Day1;
 using AdventOfCodeApp.Day2;
+using AdventOfCodeApp.Day3;
 
 Console.WriteLine("THIS IS CRITICAL, WE NEED TO FIND THE CHIEF HISTORIAN");
 Console.WriteLine("Without him, Christmas will be ruined!");
@@ -19,6 +20,11 @@ while (true)
     Console.WriteLine("DAY 2 TOOLS:");
     Console.WriteLine("3. Red-Nose Reactor Report Safety Analyser");
     Console.WriteLine("4. Red-Nose Reactor Report Safety Analyser with Problem Dampener");
+    Console.WriteLine();
+    Console.WriteLine("DAY 3 TOOLS:");
+    Console.WriteLine("5. Toboggan Shop Decorruptor Tool");
+    Console.WriteLine("6. Toboggan Shop Decorruptor Tool with Conditionals");
+    Console.WriteLine();
 
     var input = Console.ReadLine();
     Console.WriteLine("Please insert the path of the text file containing your input for this tool");
@@ -44,6 +50,14 @@ while (true)
             case "4":
                 var safetyResultWithDampener = ReportSafetySolver.Solve(text, true);
                 Console.WriteLine($"The number of safe reports when using the problem dampener is: {safetyResultWithDampener}");
+                break;
+            case "5":
+                var decorruptedResult = TobogganComputerMemoryUncorruptCalculator.Solve(text);
+                Console.WriteLine($"The sum of decorrupted multiplications is: {decorruptedResult}");
+                break;
+            case "6":
+                var decorruptedResultWithConditionals = TobogganComputerMemoryUncorruptCalculator.Solve(text, true);
+                Console.WriteLine($"The sum of decorrupted multiplications is: {decorruptedResultWithConditionals}");
                 break;
             default:
                 Console.WriteLine("Invalid input");
