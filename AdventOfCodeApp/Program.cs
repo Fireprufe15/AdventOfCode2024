@@ -28,6 +28,8 @@ while (true)
     Console.WriteLine();
     Console.WriteLine("DAY 4 TOOLS:");
     Console.WriteLine("7. Deranged Word Search Solver");
+    Console.WriteLine("8. Even more deranged X-MAS Solver");
+    Console.WriteLine();
 
     var input = Console.ReadLine();
     Console.WriteLine("Please insert the path of the text file containing your input for this tool");
@@ -65,6 +67,10 @@ while (true)
             case "7":
                 var wordSearchXmasCount = DerangedWordSearchSolver.Solve(text);
                 Console.WriteLine($"The number of XMAS words found is: {wordSearchXmasCount}");
+                break;
+            case "8":
+                var xmasCount = XSolver.Solve(text);
+                Console.WriteLine($"The number of XMAS crosses found is: {xmasCount}");
                 break;
             default:
                 Console.WriteLine("Invalid input");

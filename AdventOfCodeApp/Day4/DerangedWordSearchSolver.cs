@@ -17,10 +17,7 @@ namespace AdventOfCodeApp.Day4
             {
                 for (int x = 0; x < inputArray.GetLength(1); x++)
                 {
-                    if (inputArray[x, y] != "X")
-                    {
-                        continue;
-                    } else
+                    if (inputArray[x, y] == "X")                   
                     {                        
                         var instances = SearchAroundForWord(inputArray, x, y);
                         xmasCount += instances;
