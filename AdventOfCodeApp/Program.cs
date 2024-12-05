@@ -3,6 +3,7 @@ using AdventOfCodeApp.Day1;
 using AdventOfCodeApp.Day2;
 using AdventOfCodeApp.Day3;
 using AdventOfCodeApp.Day4;
+using AdventOfCodeApp.Day5;
 
 Console.WriteLine("THIS IS CRITICAL, WE NEED TO FIND THE CHIEF HISTORIAN");
 Console.WriteLine("Without him, Christmas will be ruined!");
@@ -29,6 +30,10 @@ while (true)
     Console.WriteLine("DAY 4 TOOLS:");
     Console.WriteLine("7. Deranged Word Search Solver");
     Console.WriteLine("8. Even more deranged X-MAS Solver");
+    Console.WriteLine();
+    Console.WriteLine("DAY 5 TOOLS:");
+    Console.WriteLine("9. Print request correct order solver");
+    Console.WriteLine("10. Print request incorrect order solver");
     Console.WriteLine();
 
     var input = Console.ReadLine();
@@ -71,6 +76,14 @@ while (true)
             case "8":
                 var xmasCount = XSolver.Solve(text);
                 Console.WriteLine($"The number of XMAS crosses found is: {xmasCount}");
+                break;
+            case "9":
+                var correctOrder = CorrectOrderPrintRequestCalculator.Solve(text);
+                Console.WriteLine($"The sum of middle numbers of the correct order print requests is: {correctOrder}");
+                break;                  
+            case "10":
+                var incorrectOrder = CorrectOrderPrintRequestCalculator.Solve(text, true);
+                Console.WriteLine($"The sum of middle numbers of the incorrect order print requests after correction is: {incorrectOrder}");
                 break;
             default:
                 Console.WriteLine("Invalid input");
