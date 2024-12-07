@@ -4,6 +4,7 @@ using AdventOfCodeApp.Day2;
 using AdventOfCodeApp.Day3;
 using AdventOfCodeApp.Day4;
 using AdventOfCodeApp.Day5;
+using AdventOfCodeApp.Day6;
 
 Console.WriteLine("THIS IS CRITICAL, WE NEED TO FIND THE CHIEF HISTORIAN");
 Console.WriteLine("Without him, Christmas will be ruined!");
@@ -34,6 +35,10 @@ while (true)
     Console.WriteLine("DAY 5 TOOLS:");
     Console.WriteLine("9. Print request correct order solver");
     Console.WriteLine("10. Print request incorrect order solver");
+    Console.WriteLine();
+    Console.WriteLine("DAY 6 TOOLS:");
+    Console.WriteLine("11. Guard Route Map Parser");
+    Console.WriteLine("12. Guard Route Path Solver");
     Console.WriteLine();
 
     var input = Console.ReadLine();
@@ -84,6 +89,10 @@ while (true)
             case "10":
                 var incorrectOrder = CorrectOrderPrintRequestCalculator.Solve(text, true);
                 Console.WriteLine($"The sum of middle numbers of the incorrect order print requests after correction is: {incorrectOrder}");
+                break;
+            case "11":
+                var guardPositions = GuardRoutePathSolver.SolveForPositions(text);
+                Console.WriteLine($"The number of guard positions is: {guardPositions}");
                 break;
             default:
                 Console.WriteLine("Invalid input");
