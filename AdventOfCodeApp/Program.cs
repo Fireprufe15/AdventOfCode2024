@@ -6,6 +6,7 @@ using AdventOfCodeApp.Day4;
 using AdventOfCodeApp.Day5;
 using AdventOfCodeApp.Day6;
 using AdventOfCodeApp.Day7;
+using AdventOfCodeApp.Day8;
 
 Console.WriteLine("THIS IS CRITICAL, WE NEED TO FIND THE CHIEF HISTORIAN");
 Console.WriteLine("Without him, Christmas will be ruined!");
@@ -44,6 +45,10 @@ while (true)
     Console.WriteLine("DAY 7 TOOLS:");
     Console.WriteLine("13. Operator checker");
     Console.WriteLine("14. Operator checker with concat");
+    Console.WriteLine();
+    Console.WriteLine("DAY 8 TOOLS:");
+    Console.WriteLine("15. Antinode location calculator");
+    Console.WriteLine("16. Antinode location calculator with resonance");
     Console.WriteLine();
 
     var input = Console.ReadLine();
@@ -110,6 +115,14 @@ while (true)
             case "14":
                 var operatorCountWithconcat = OperatorSolver.Solve(text, true);
                 Console.WriteLine($"The calibration result is: {operatorCountWithconcat}");
+                break;
+            case "15":
+                var antinodeLocation = AntennaMapSolver.SolveAntinodeCount(text);
+                Console.WriteLine($"The antinode location count is: {antinodeLocation}");
+                break;
+            case "16":
+                var antinodeLocationWithConditionals = AntennaMapSolver.SolveAntinodeCount(text, true);
+                Console.WriteLine($"The antinode location count taking resonance into account is: {antinodeLocationWithConditionals}");
                 break;
             default:
                 Console.WriteLine("Invalid input");
