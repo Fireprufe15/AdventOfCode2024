@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
@@ -16,10 +17,10 @@ namespace AdventOfCodeApp.Day7
             foreach (var line in lines)
             {
                 var split = line.Split(':');
-                var numbers = split[1].Trim().Split(' ').Select(int.Parse).ToArray();
+                var numbers = split[1].Trim().Split(' ').Select(BigInteger.Parse).ToArray();
                 equations.Add(new Equation
                 {
-                    TestValue = int.Parse(split[0]),
+                    TestValue = BigInteger.Parse(split[0]),
                     Numbers = numbers
                 });
                 
@@ -30,7 +31,7 @@ namespace AdventOfCodeApp.Day7
 
     public class Equation
     {
-        public int TestValue { get; set; }
-        public int[] Numbers { get; set; }
+        public BigInteger TestValue { get; set; }
+        public BigInteger[] Numbers { get; set; }
     }
 }

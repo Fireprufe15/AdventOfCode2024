@@ -5,6 +5,7 @@ using AdventOfCodeApp.Day3;
 using AdventOfCodeApp.Day4;
 using AdventOfCodeApp.Day5;
 using AdventOfCodeApp.Day6;
+using AdventOfCodeApp.Day7;
 
 Console.WriteLine("THIS IS CRITICAL, WE NEED TO FIND THE CHIEF HISTORIAN");
 Console.WriteLine("Without him, Christmas will be ruined!");
@@ -42,7 +43,7 @@ while (true)
     Console.WriteLine();
     Console.WriteLine("DAY 7 TOOLS:");
     Console.WriteLine("13. Operator checker");
-    Console.WriteLine("14. ");
+    Console.WriteLine("14. Operator checker with concat");
     Console.WriteLine();
 
     var input = Console.ReadLine();
@@ -101,6 +102,14 @@ while (true)
             case "12":
                 var guardPaths = GuardRoutePathSolver.SolveForPositions(text, true);
                 Console.WriteLine($"The number of loopable obstacle positions is: {guardPaths}");
+                break;
+            case "13":
+                var operatorCount = OperatorSolver.Solve(text);
+                Console.WriteLine($"The calibration result is: {operatorCount}");
+                break;
+            case "14":
+                var operatorCountWithconcat = OperatorSolver.Solve(text, true);
+                Console.WriteLine($"The calibration result is: {operatorCountWithconcat}");
                 break;
             default:
                 Console.WriteLine("Invalid input");
