@@ -40,6 +40,10 @@ while (true)
     Console.WriteLine("11. Guard Route Map Parser");
     Console.WriteLine("12. Guard Route Path Solver");
     Console.WriteLine();
+    Console.WriteLine("DAY 7 TOOLS:");
+    Console.WriteLine("13. Operator checker");
+    Console.WriteLine("14. ");
+    Console.WriteLine();
 
     var input = Console.ReadLine();
     Console.WriteLine("Please insert the path of the text file containing your input for this tool");
@@ -93,6 +97,10 @@ while (true)
             case "11":
                 var guardPositions = GuardRoutePathSolver.SolveForPositions(text);
                 Console.WriteLine($"The number of guard positions is: {guardPositions}");
+                break;
+            case "12":
+                var guardPaths = GuardRoutePathSolver.SolveForPositions(text, true);
+                Console.WriteLine($"The number of loopable obstacle positions is: {guardPaths}");
                 break;
             default:
                 Console.WriteLine("Invalid input");
