@@ -7,6 +7,7 @@ using AdventOfCodeApp.Day5;
 using AdventOfCodeApp.Day6;
 using AdventOfCodeApp.Day7;
 using AdventOfCodeApp.Day8;
+using AdventOfCodeApp.Day9;
 
 Console.WriteLine("THIS IS CRITICAL, WE NEED TO FIND THE CHIEF HISTORIAN");
 Console.WriteLine("Without him, Christmas will be ruined!");
@@ -49,6 +50,10 @@ while (true)
     Console.WriteLine("DAY 8 TOOLS:");
     Console.WriteLine("15. Antinode location calculator");
     Console.WriteLine("16. Antinode location calculator with resonance");
+    Console.WriteLine();
+    Console.WriteLine("DAY 9 TOOLS:");
+    Console.WriteLine("17. Disk file compactor");
+    Console.WriteLine("18. Disk file compactor with anti-fragmentation");
     Console.WriteLine();
 
     var input = Console.ReadLine();
@@ -123,6 +128,14 @@ while (true)
             case "16":
                 var antinodeLocationWithConditionals = AntennaMapSolver.SolveAntinodeCount(text, true);
                 Console.WriteLine($"The antinode location count taking resonance into account is: {antinodeLocationWithConditionals}");
+                break;
+            case "17":
+                var diskChecksum = DiskCompactorTool.CompactDiskAndGetChecksum(text);
+                Console.WriteLine($"The checksum of the compacted disk is: {diskChecksum}");
+                break;
+            case "18":
+                var diskChecksumWithAntiFragmentation = DiskCompactorTool.CompactDiskAndGetChecksumWithDefragmentation(text);
+                Console.WriteLine($"The checksum of the compacted disk is: {diskChecksumWithAntiFragmentation}");
                 break;
             default:
                 Console.WriteLine("Invalid input");
