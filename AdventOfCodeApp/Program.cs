@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using AdventOfCodeApp.Day1;
+using AdventOfCodeApp.Day10;
 using AdventOfCodeApp.Day2;
 using AdventOfCodeApp.Day3;
 using AdventOfCodeApp.Day4;
@@ -54,6 +55,10 @@ while (true)
     Console.WriteLine("DAY 9 TOOLS:");
     Console.WriteLine("17. Disk file compactor");
     Console.WriteLine("18. Disk file compactor with anti-fragmentation");
+    Console.WriteLine();
+    Console.WriteLine("DAY 10 TOOLS:");
+    Console.WriteLine("19. Topographic Map Trailhead Scorer");
+    Console.WriteLine("20. Topographic Map Trailhead Rater");
     Console.WriteLine();
 
     var input = Console.ReadLine();
@@ -136,6 +141,14 @@ while (true)
             case "18":
                 var diskChecksumWithAntiFragmentation = DiskCompactorTool.CompactDiskAndGetChecksumWithDefragmentation(text);
                 Console.WriteLine($"The checksum of the compacted disk is: {diskChecksumWithAntiFragmentation}");
+                break;
+            case "19":
+                var trailhead = TrailheadSolver.SolveTrailheadScores(text, true);
+                Console.WriteLine($"The trailhead scores are a total of: {trailhead}");
+                break;
+            case "20":
+                var trailheadRatings = TrailheadSolver.SolveTrailheadScores(text, false);
+                Console.WriteLine($"The trailhead ratings are a total of: {trailheadRatings}");
                 break;
             default:
                 Console.WriteLine("Invalid input");
