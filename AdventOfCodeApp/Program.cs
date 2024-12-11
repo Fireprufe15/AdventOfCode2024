@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using AdventOfCodeApp.Day1;
 using AdventOfCodeApp.Day10;
+using AdventOfCodeApp.Day11;
 using AdventOfCodeApp.Day2;
 using AdventOfCodeApp.Day3;
 using AdventOfCodeApp.Day4;
@@ -59,6 +60,9 @@ while (true)
     Console.WriteLine("DAY 10 TOOLS:");
     Console.WriteLine("19. Topographic Map Trailhead Scorer");
     Console.WriteLine("20. Topographic Map Trailhead Rater");
+    Console.WriteLine();
+    Console.WriteLine("21. Stone Counter 25 blinks");
+    Console.WriteLine("22. Stone Counter 75 blinks");
     Console.WriteLine();
 
     var input = Console.ReadLine();
@@ -149,6 +153,14 @@ while (true)
             case "20":
                 var trailheadRatings = TrailheadSolver.SolveTrailheadScores(text, false);
                 Console.WriteLine($"The trailhead ratings are a total of: {trailheadRatings}");
+                break;
+            case "21":
+                var stoneCount = StoneCounter.Solve(text, 25);
+                Console.WriteLine($"The number of stones is: {stoneCount}");
+                break;
+            case "22":
+                var stoneCountBig = StoneCounter.Solve(text, 75);
+                Console.WriteLine($"The number of stones is: {stoneCountBig}");
                 break;
             default:
                 Console.WriteLine("Invalid input");
