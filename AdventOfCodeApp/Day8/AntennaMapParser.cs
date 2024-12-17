@@ -10,7 +10,7 @@ namespace AdventOfCodeApp.Day8
     {
         public static char[,] ParseMap(string input)
         {
-            var lines = input.Split("\n", StringSplitOptions.RemoveEmptyEntries);
+            var lines = input.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
             var map = new char[lines[0].Length, lines.Length];
             for (int x = 0; x < lines[0].Length; x++)
             {

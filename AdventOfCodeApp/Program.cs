@@ -2,6 +2,7 @@
 using AdventOfCodeApp.Day1;
 using AdventOfCodeApp.Day10;
 using AdventOfCodeApp.Day11;
+using AdventOfCodeApp.Day12;
 using AdventOfCodeApp.Day2;
 using AdventOfCodeApp.Day3;
 using AdventOfCodeApp.Day4;
@@ -61,8 +62,13 @@ while (true)
     Console.WriteLine("19. Topographic Map Trailhead Scorer");
     Console.WriteLine("20. Topographic Map Trailhead Rater");
     Console.WriteLine();
+    Console.WriteLine("DAY 11 TOOLS:");
     Console.WriteLine("21. Stone Counter 25 blinks");
     Console.WriteLine("22. Stone Counter 75 blinks");
+    Console.WriteLine();
+    Console.WriteLine("DAY 12 TOOLS:");
+    Console.WriteLine("23. Garden fencing price calculator");
+    Console.WriteLine("24. ???");
     Console.WriteLine();
 
     var input = Console.ReadLine();
@@ -161,6 +167,10 @@ while (true)
             case "22":
                 var stoneCountBig = StoneCounter.Solve(text, 75);
                 Console.WriteLine($"The number of stones is: {stoneCountBig}");
+                break;
+            case "23":
+                var fencePrice = GardenFenceCalculator.Solve(text);
+                Console.WriteLine($"The price of the garden fence is: {fencePrice}");
                 break;
             default:
                 Console.WriteLine("Invalid input");
